@@ -12,4 +12,8 @@ macro_rules! customPrint {
 
 fn main() {
     println!("{}, {crowd} {1}!", "Hello", 2*21, crowd = "World");
+
+    customPrint!();
+    customPrint!("You");
+    customPrint!("Hurrah" => "Next INpact");
 }
