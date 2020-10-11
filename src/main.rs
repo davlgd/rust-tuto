@@ -16,4 +16,7 @@ fn main() {
     customPrint!();
     customPrint!("You");
     customPrint!("Hurrah" => "Next INpact");
+
+    println!("CPU Threads : {}", num_cpus::get());
+    println!("CPU Cores : {}", num_cpus::get_physical());
 }
