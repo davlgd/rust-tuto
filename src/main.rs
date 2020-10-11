@@ -10,6 +10,11 @@ macro_rules! customPrint {
     };
 }
 
+fn get_cpu_count() -> (usize, usize)
+{
+    (num_cpus::get(), num_cpus::get_physical())
+}
+
 fn main() {
     println!("{}, {crowd} {1}!", "Hello", 2*21, crowd = "World");
 
@@ -17,6 +22,6 @@ fn main() {
     customPrint!("You");
     customPrint!("Hurrah" => "Next INpact");
 
-    println!("CPU Threads : {}", num_cpus::get());
-    println!("CPU Cores : {}", num_cpus::get_physical());
+    let (cpu_log, cpu_phy) = get_cpu_count();
+    println!("CPU Cores : {}, CPU Threads : {}", cpu_phy, cpu_log);
 }
